@@ -179,10 +179,42 @@ p {
 body {
       position: relative; 
   }
-
   .header_name {
     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
     background: #e5e5e5;
     text-align: center;
     margin-top: 25px;
+}
+.form-control{
+	border-radius: 0;
+}
+.form-control:focus , .form-control:hover , .form-control:active{
+	border: 1px solid;
+	outline: none;
+	border-color: #007bff;
+	    border-radius: 0px !important;
+    box-shadow: none !important;
+}
+textarea:focus, input:focus , input:hover , input:active{
+    border: 1px solid;
+	outline: none;
+	border-color: #007bff;
+	    border-radius: 0px !important;
+    box-shadow: none !important;
+}
+.btn-group-lg>.btn, .btn-lg {
+	border-radius: 0;
+}
+.btn-primary {
+	background-color:#1792E5;
+	border-color: #1792E5;
+}
+#saveBtn {
+	margin-left: 10px;
+    margin-bottom: 20px;
+}
+.input {
+	outline: 0 none;
+    border-radius: 0px !important;
+    box-shadow: none !important;
 }

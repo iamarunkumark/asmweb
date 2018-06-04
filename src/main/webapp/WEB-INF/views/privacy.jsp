@@ -1,7 +1,8 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Anbu Super Markets</title>
@@ -11,7 +12,7 @@
     <link rel='stylesheet' href='<c:url value="/resources/libs/bootstrap.min.css" />' type='text/css' media='all' />
     <link rel='stylesheet' href='<c:url value="/resources/css/asm.css" />' type='text/css' media='all' />
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-    <script>
+        <script>
     function init() {
       $("#loading").hide();
       $("#outer").show();
@@ -30,7 +31,7 @@
           $(".nav-link").css('color', '#007bff');          
           $(".navbar-brand").css('color', '#007bff');          
        } else {
-          $('.navbar-default').css('background-color', 'transparent');
+          $('.navbar-default').css('background-color', '');
           $(".nav-link").css('color', '#ffffff');      
           $(".navbar-brand").css('color', '#ffffff'); 
        }
@@ -38,7 +39,7 @@
     }
 });
 
-  $(function() {
+    $(function() {
     // navbar background color
   $( "#nav-toggler-btn" ).click(function() {
   var scroll_start = 0;
@@ -54,7 +55,8 @@
   }  
 });
 });
-  $(function(){ 
+
+   $(function(){ 
      var navMain = $(".navbar-collapse"); // avoid dependency on #id
      // "a:not([data-toggle])" - to avoid issues caused
      // when you have dropdown inside navbar
@@ -63,20 +65,11 @@
      });
  });
     </script>
-  </head>
+    </head>
   <body onload="init()" data-spy="scroll" data-target=".navbar" data-offset="50">
     <div class="loader" id="loading"></div>
-    <div id="outer" style="display:none"> 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=1341851349195879&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>    
-    <div class="background-gradient">
+    <div id="outer" style="display:none;"> 
+      <div class="policy-bg-gradient">
       <nav id="navbar-full" class="navbar navbar-expand-md navbar-default fixed-top">        
     <button id="nav-toggler-btn" class="navbar-toggler mr-2" type="button"  data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -86,98 +79,35 @@
     <div class="navbar-collapse collapse" id="navbar">
 <ul id="navbar-list" class="navbar-nav justify-content-center d-flex flex-fill">
             <li class="nav-item">
-                <a class="nav-link" href="#outer">HOME</a>
+                <a class="nav-link" href="http://anbusupermarkets.com">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#about">ABOUT</a>
+                <a class="nav-link" href="http://anbusupermarkets.com#about">ABOUT</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#about">DELIVERY</a>
+                <a class="nav-link" href="http://anbusupermarkets.com#about">DELIVERY</a>
             </li>
         </ul>
     </div>
     <div class="d-flex flex-fill"><!--spacer--> </div>
-  </nav>
-<div class="container" id="startchange">
-  <div class="row">
-    <div class="col-md-12 col-sm-12">
-    <div style="margin-top:130px;">
-    </div>
-    <h1 id="block-heading"> 
-      <strong>
-        Anbu Super Markets
-      </strong>
-    </h1>
-    <p id="block-para">
-      Qualtiy is the motto of us. <br>
-      Motto is our Qualtiy.
-    </p>
-    </div>    
-  </div>
+</nav>
 </div>
-</div> <!-- gradient ends here -->
-<!--  Carousel Starts here-->
-<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  Indicators
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-
-  Wrapper for slides
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/carousel1.jpg" width="1100" height="300" alt="Chania">
-      <div class="carousel-caption">
-        <h3>Los Angeles</h3>
-        <p>LA is always so much fun!</p>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="images/carousel2.jpg" width="1100" height="300" alt="Chicago">
-      <div class="carousel-caption">
-        <h3>Chicago</h3>
-        <p>Thank you, Chicago!</p>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="images/carousel3.jpg" width="1100" height="300" alt="New York">
-      <div class="carousel-caption">
-        <h3>New York</h3>
-        <p>We love the Big Apple!</p>
-      </div>
-    </div>
-  </div>
-  Left and right controls
-  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div> -->
-<!--  Carousel Ends here-->
-<!-- 
-Online Order Form Starts here
- -->
- 
-<!-- Home Delivery Content -->
-  <div class="container-fluid" id="about">
+  <div class="container" id="startchange" >
     <div class="row">
-    <div class="col-md-6 col-sm-12" >
+<div class="col-12" style="margin-top: 20px;">
+    <div class="header_name">
+      <h1> PRIVACY POLICY </h1>
     </div>
-    <div class="col-md-3 col-sm-12" >
+    <div class="text-center" style="padding:3rem 1.5rem 1.5rem 1.5rem">
+            <p class="lead"><i>Last updated: April 1, 2018</i></p>
+          </div>
     </div>
-    <div class="col-md-3 col-sm-12" id="facebook-feed">
-    <div ><!-- style="float:right;" -->
-          <h6>Facebook Feed</h6>      
-      <div class="fb-page" data-href="https://www.facebook.com/anbusupermarkets" data-tabs="timeline" data-width="350" data-height="450" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/anbusupermarkets" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/anbusupermarkets">Anbu Super Markets</a></blockquote></div>
-    </div>
-    </div>
-    </div>
+    <div class="col-md-12 col-sm-12 policy" style="padding-bottom:3rem">
+              <p>Your privacy is important to us. It is our policy to respect your privacy regarding any information we may collect from you across our web site, http://www.anbusupermarkets.com.</p>
+              <p>We don't ask for your personal information unless we truly need it. When we do, we'll only collect what we need by fair and lawful means and, where appropriate, with your knowledge or consent. We'll also let you know why we're collecting it and how it will be used.</p>
+              <p>We don't share your personal information with third-parties, except where required by law. We will only retain personal information for as long as necessary to provide you with a service.</p>
+              <p>We don't store your personal information on our servers unless it's required for providing a service to you. What we store, we'll protect within commercially acceptable means to protect your personal information from loss or theft, as well as unauthorized access, disclosure, copying, use or modification.</p>
+            </div>
   </div>
 <!--Footer-->
 <footer class="footer" id="block-footer">
@@ -207,25 +137,25 @@ Online Order Form Starts here
                             </div>
                             <div class="col-md-6 col-sm-12">                                
                                         <div class="widget-title">
-                                        <h6>Google Maps</h6>                                                                    
+                                        <h6>Map Location</h6>                                                                    
                                     </div>
 
                             <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Anbu%20Super%20Markets%20Puduppatti%20Pon%2C%20Ponnamaravathi%2C%20Tamil%20Nadu%20622407&key=AIzaSyDsl57Iab-71jNT080CSMpBO0maTN8rBy8" allowfullscreen></iframe>                          
                             </div>
                         </div>
                     </div>
-                </div>
-                <br>
+                </div><br>
                 <div class="footer-bar">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
-                                <a href="/asmweb/privacy">Privacy Policy</a>
+                                <a href="anbusupermarkets.com/PrivacyPolicy.html">Privacy Policy</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </footer>
+</div>
 </div>
   </body>
 </html>

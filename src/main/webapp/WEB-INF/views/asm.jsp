@@ -1,4 +1,5 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -92,7 +93,7 @@
                 <a class="nav-link" href="#about">ABOUT</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#about">DELIVERY</a>
+                <a class="nav-link" href="#order">ORDER</a>
             </li>
         </ul>
     </div>
@@ -109,23 +110,22 @@
       </strong>
     </h1>
     <p id="block-para">
-      Qualtiy is the motto of us. <br>
-      Motto is our Qualtiy.
+      Quality is our motto! <br>
     </p>
     </div>    
   </div>
 </div>
 </div> <!-- gradient ends here -->
 <!--  Carousel Starts here-->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
+<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  Indicators
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
 
-  <!-- Wrapper for slides -->
+  Wrapper for slides
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="images/carousel1.jpg" width="1100" height="300" alt="Chania">
@@ -151,19 +151,65 @@
       </div>
     </div>
   </div>
-  <!-- Left and right controls -->
+  Left and right controls
   <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </a>
   <a class="carousel-control-next" href="#myCarousel" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
-</div>
+</div> -->
 <!--  Carousel Ends here-->
+<!-- 
+Online Order Form Starts here
+ -->
+ 
 <!-- Home Delivery Content -->
-  <div class="container-fluid" id="about">
+  <div class="container-fluid" id="order">
     <div class="row">
     <div class="col-md-6 col-sm-12" >
+    <!-- Upload form -->
+    <form:form id = 'deliveryOrderForm' commandName="contactAddressForm" enctype="multipart/form-data" action='/asmweb/addOrder'>
+    <div class="form-group">
+    <label for="orderFile">Upload File</label>
+    <form:input type="file" path='orderFile' title='Photo' class="form-control-file" id="orderFile" />
+ 	</div>
+ 	<div class="form-group">
+	<label for="customerName" class="required">Name</label>
+	<form:input id="customerName" path='customerName' name="customerName" title="Name" type="text" class="form-control" value="" maxlength="30" />
+ 	</div>
+    <div class="form-group">
+	<label for="contactNumber" class="required">Contact Number</label>
+	<form:input id="contactNumber" name="contactNumber" title="Phone Number" path='contactNumber' type="text" class="form-control" value="" maxlength="11" />
+ 	</div>
+ 	<div class="form-group">
+	<label for="addressLine1" class="required">Address Line 1</label>
+	<form:input id="addressLine1" name="addressLine1" path="addressLine1" title="Address" type="text" class="form-control" value="" maxlength="30" />
+ 	</div>
+ 	<div class="form-group">
+	<label for="addressLine2" class="required">Address Line 2</label>
+	<form:input id="addressLine2" name="addressLine2" path='addressLine2' title="Address" type="text" class="form-control" value="" maxlength="30" />
+ 	</div>
+ 	<div class="form-group">
+	<label for="city" class="required">Village/Town/City</label>
+	<form:input id="city" name="city" path='city' title="City" type="text" class="form-control" value="" maxlength="30" />
+ 	</div>
+ 	<div class="form-group">
+	<label for="pinCode" class="required">Pin Code</label>
+	<form:input id="pinCode" path='pinCode' name="pinCode" title="Pin Code" type="text" class="form-control" maxlength="6" />
+ 	</div>
+ 	<form:input id="state" path='state' name="state" title="State" type="hidden" class="form-control" value="TamilNadu" maxlength="20" />
+ 	<%-- <div class="form-group" >
+	<label for="state" class="required">State</label>
+	<form:input id="state" path='state' name="state" title="State" type="hidden" class="form-control" value="TamilNadu" maxlength="20" />
+ 	</div>
+    <div class="form-group" >
+	<label for="country" class="required">Country</label>
+	<form:input id="country" path='country' name="country" title="Country" type="hidden" class="form-control" value="India" maxlength="20" />
+ 	</div> --%>
+    <form:input id="country" path='country' name="country" title="Country" type="hidden" class="form-control" value="India" maxlength="20" />
+    <button class="btn btn-primary nextBtn btn-lg pull-left" type="button" id = "saveBtn" >Place Order</button>
+    </form:form>
     </div>
     <div class="col-md-3 col-sm-12" >
     </div>
@@ -191,7 +237,7 @@
                                             Location: Anna Salai, Ponnamaravathy<br>
                                             Pudukkottai District. 622407<br>
                                             E-mail: anbusupermarkets@outlook.com<br>
-                                            Phone: +91 8861634326<br>
+                                            Phone: 04333 263600<br>
                                         </p>
                                         <ul class="social-icons">
                                             <!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li> -->
@@ -216,7 +262,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
-                                <a href="PrivacyPolicy.html">Privacy Policy</a>
+                                <a href="/asmweb/privacy">Privacy Policy</a>
                             </div>
                         </div>
                     </div>
